@@ -15,6 +15,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { ShoppinglistService } from './shopping-list/shopping-list.service';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,10 @@ import { ShoppinglistService } from './shopping-list/shopping-list.service';
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
-    RecipeStartComponent
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
+  
   imports: [
     BrowserModule,
     FormsModule,

@@ -1,5 +1,9 @@
-<a style="cursor: pointer;" class="list-group-item clearfix" (click)="onSelected()">
-<!-- <a style="cursor: pointer;" class="list-group-item clearfix" > -->
+<!-- <a style="cursor: pointer;" class="list-group-item clearfix" (click)="onSelected()"> -->
+<a style="cursor: pointer;"
+[routerLink]="[index]"
+routerLinkActive="active"
+class="list-group-item clearfix" >
+    
     <div class="d-flex">
         <div class="mr-auto p-2">
             <h4 class="list-group-item-heading">{{ recipe.name }}</h4>

@@ -1,6 +1,7 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Recipe } from './recipe.model';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeService } from '../recipes.service';
+import { Recipe } from './recipe.model';
 
 @Component({
   selector: 'app-recipe-list',
@@ -16,16 +17,23 @@ export class RecipeListComponent implements OnInit {
 // new Recipe('A Sandwitch Recipe', 'This is a test Sandwitch Recipe', 'assets/photos/image sand.jpg')
 //   ];
 
-  constructor(private recipeService: RecipeService) {
+  constructor(private recipeService: RecipeService, 
+              private router: Router,
+              private route: ActivatedRoute) {
 
    }
 
   ngOnInit() {
-    this.recipes = this.recipeService.getRecipes();
+
+  this.recipes = this.recipeService.getRecipes();
 
   }
 
   // onRecipeSelected(recipe: Recipe){
   //   this.recipeWasSelected.emit(recipe);
   // }
+
+  onNewRecipe(){
+    this.router.navigate(['new'], {relativeTo: this.route});
+  }
 }
